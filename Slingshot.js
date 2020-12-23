@@ -18,7 +18,7 @@ class Slingshot{
         var pointA =this.sling.bodyA.position;
         var pointB =this.sling.pointB;
         push();
-        //stroke(rgb(48,22,8));
+        //stroke(rgb("48,22,8));
        if(pointA.x<220){
            strokeWeight(7);
            line(pointA.x-20,pointA.y,pointB.x-10,pointB.y)
@@ -39,5 +39,10 @@ class Slingshot{
     
     fly(){
         this.sling.bodyA = null;
+    }
+
+    attach(body){
+        this.sling.bodyA = body
+
     }
 }
