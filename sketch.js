@@ -9,6 +9,7 @@ var bgImage;
 var platForm;
 var constrainedLog;
 var slingshot;
+var gameState = "onSling";
 
 
 
@@ -77,15 +78,20 @@ function draw(){
 }
 
 function mouseDragged(){
+   if(gameState != "launched"){
     Matter.Body.setPosition(bird.body,{x:mouseX,y:mouseY})
+   }
+    
+
 }
 
 function mouseReleased(){
     slingshot.fly();
+    gameState = "launched"
 }
 
 function keyPressed(){
     if(keyCode == 32){
-        slingshot.attach(bird.body)
+      //  slingshot.attach(bird.body)
     }
 }
